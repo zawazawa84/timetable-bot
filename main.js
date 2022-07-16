@@ -29,7 +29,7 @@ app.post("/webhook", async (req, res) => {
         const now = new Date("2022-7-15 12:00:00");
         const lesson = getNextLesson(now);
         if (lesson !== null) {
-          await replyMessage(`次の授業は、${lesson.name}です`, replyToken);
+          await replyMessage(`次の授業は、${lesson.name}です。教室は${lesson.place}`, replyToken);
         } else {
           await replyMessage("次の授業はありません", replyToken);
         }
