@@ -1,4 +1,5 @@
 require("dotenv").config();
+const PORT=process.env.PORT || 3000;
 const LINE_CHANNEL_ACCESS_TOKEN=process.env.LINE_CHANNEL_ACCESS_TOKEN
 const fetch=require("node-fetch");
 const express=require("express");
@@ -45,7 +46,7 @@ app.get("/",(req,res)=>{
     res.send("Hello World");
 });
 
-app.listen(3000, ()=>{
+app.listen(PORT, ()=>{
     console.log("Running at https://localhost:3000");
 });
 
